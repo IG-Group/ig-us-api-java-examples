@@ -1,0 +1,12 @@
+spring:
+  main:
+    web-application-type: none 
+    
+
+client:
+    url: ${URL}
+    username: ${IG_USERNAME}
+    password: ${IG_PASSWORD}
+    account: ${IG_ACCOUNT}
+    reconnect-interval: 30s
+    heartbeat-interval: 5s

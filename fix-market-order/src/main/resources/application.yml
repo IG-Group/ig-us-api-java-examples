@@ -1,0 +1,22 @@
+quickfixj:
+ client:
+  config: classpath:quickfixj-client.template.cfg
+  jmx-enabled: false
+  message-store-factory: noop
+  log-factory: slf4j
+  
+app:
+  login:
+  session:
+    username: ${IG_USERNAME}
+    password: ${IG_PASSWORD}
+    account: ${IG_ACCOUNT}
+    comp-id: ${app.session.username} 
+    host: ${HOST}
+    port: ${PORT}
+
+logging:
+  group:
+    fix: quickfix.ThreadedSocketInitiator, quickfixj.msg.incoming, quickfixj.msg.outgoing
+  level:
+    fix: INFO

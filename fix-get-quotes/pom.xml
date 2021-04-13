@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.3</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.ig.fix.igus.examples</groupId>
+	<artifactId>fix-get-quotes</artifactId>
+	<description>example client</description>
+
+	<properties>
+		<quickfixj-starter.version>2.7.1</quickfixj-starter.version>
+		<igus-quickfixj.version>1.0.20</igus-quickfixj.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+            <groupId>com.ig.us.otc</groupId>
+            <artifactId>quickfixj-core</artifactId>
+            <version>${igus-quickfixj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ig.us.otc</groupId>
+            <artifactId>quickfixj-messages-fix50sp2</artifactId>
+            <version>${igus-quickfixj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ig.us.otc</groupId>
+            <artifactId>quickfixj-messages-fixt11</artifactId>
+            <version>${igus-quickfixj.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>io.allune</groupId>
+			<artifactId>quickfixj-spring-boot-starter</artifactId>
+			<version>${quickfixj-starter.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.quickfixj</groupId>
+					<artifactId>quickfixj-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.quickfixj</groupId>
+					<artifactId>quickfixj-messages-all</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

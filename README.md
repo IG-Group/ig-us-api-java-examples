@@ -20,3 +20,12 @@ or for Trading:
 ```
 URL=wss://demo-igustrade.ig.com/trade IG_USERNAME=user1234566 IG_PASSWORD=secret IG_ACCOUNT=ac123 mvn clean spring-boot:run
 ```
+## FIX Examples
+```
+ HOST=host PORT=12345 IG_USERNAME=user123 IG_PASSWORD=secret mvn clean spring-boot:run
+```
+or for Trading:
+
+```
+ HOST=host PORT=12345 IG_USERNAME=user123 IG_PASSWORD=secret IG_ACCOUNT=ABCDE mvn clean spring-boot:run
+```

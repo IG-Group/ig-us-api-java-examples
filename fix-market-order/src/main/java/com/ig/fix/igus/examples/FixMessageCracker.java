@@ -3,7 +3,6 @@ package com.ig.fix.igus.examples;
 import lombok.extern.slf4j.Slf4j;
 import quickfix.FieldNotFound;
 import quickfix.IncorrectTagValue;
-import quickfix.Message;
 import quickfix.MessageCracker;
 import quickfix.SessionID;
 import quickfix.UnsupportedMessageType;

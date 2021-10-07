@@ -1,13 +1,9 @@
 package com.ig.fix.igus.examples;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
-import java.util.Date;
-
 import lombok.extern.slf4j.Slf4j;
-import quickfix.Application;
 import quickfix.ApplicationAdapter;
 import quickfix.FieldNotFound;
 import quickfix.IncorrectDataFormat;

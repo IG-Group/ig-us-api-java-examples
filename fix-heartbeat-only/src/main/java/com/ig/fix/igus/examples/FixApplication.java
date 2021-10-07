@@ -1,6 +1,5 @@
 package com.ig.fix.igus.examples;
 
-import quickfix.Application;
 import quickfix.ApplicationAdapter;
 import quickfix.MessageCracker;
 

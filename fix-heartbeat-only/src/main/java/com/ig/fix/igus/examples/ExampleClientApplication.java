@@ -3,6 +3,7 @@ package com.ig.fix.igus.examples;
 import static java.lang.Thread.currentThread;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -36,8 +37,9 @@ import quickfix.ThreadedSocketInitiator;
 @SpringBootApplication
 public class ExampleClientApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(ExampleClientApplication.class, args);
+        TimeUnit.DAYS.sleep(Integer.MAX_VALUE);//do not exit before quikcfixj non-daemon threads start
     }
     
     

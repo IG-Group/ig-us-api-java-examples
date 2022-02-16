@@ -79,11 +79,14 @@ public class Client {
 
 	private WebSocketHandler makeWebsocketHandler() {
 		return session -> session.send(session.receive()//
-				.map(msg -> msg.getPayloadAsText()).log("ws-in")// TODO: this will not close a connection if the server
+				.map(msg -> msg.getPayloadAsText())//
+				.log("ws-in")// TODO: this will not close a connection if the server
 																// stops heartbeating
-				.map(msg -> toJsonNode(msg)).flatMap(jsonNode -> handleMessage(jsonNode))
+				.map(msg -> toJsonNode(msg))//
+				.flatMap(jsonNode -> handleMessage(jsonNode),1)
 				.switchMap(str -> followWithHeartbeat(str))//
-				.startWith(initiateLogin()).log("ws-out")//
+				.startWith(initiateLogin())//
+				.log("ws-out")//
 				.map(str -> session.textMessage(str)));
 	}
 
